@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root { 
+--primary-color: #233833; /* Verde oscuro / Negro suave para texto principal y fondos */
+--secondary-color: #2e4943; /* Verde más sutil para acentos */
+--accent-color: #f8f0e1; /* Tono tierra/marrón para detalles */
+--background-light: #f8f0e1; 
+--text-color: #333333;
+--heading-color: #343A40;
+--border-color: #233833; 
+--box-shadow: 0 2px 5px rgba(0, 0, 0, 0.342); /* Sombra muy sutil */
+--border-radius: 4px;
+}
+/* Estilos Generales */
+body {
+font-family: 'Poppins', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: var(--background-light);
+color: var(--text-color);
+line-height: 1.6;
+overflow-x: hidden; /* Evita scroll horizontal por elementos fuera de flujo */
+}
+
+h1, h2, h3, h4 {
+font-family: 'Playfair Display', serif;
+color: var(--heading-color);
+margin-bottom: 20px;
+}
+
+h2 {
+font-size: 3.5em;
+font-weight: 700;
+}
+
+h3 {
+font-size: 2.5em;
+font-weight: 700;
+}
+
+h4 {
+font-size: 1.8em;
+font-weight: 700;
+}
+
+p {
+font-size: 1.1em;
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+color: var(--primary-color);
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: var(--accent-color);
+}
+
+.subtitle {
+font-family: 'Poppins', sans-serif;
+font-size: 0.9em;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--secondary-color);
+display: block;
+margin-bottom: 10px;
+}
+
+.text-center {
+text-align: center;
+}
+
+.description {
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+font-size: 1.2em;
+color: var(--secondary-color);
+}
+
+/* Header y Navegación */
+header {
+  background-color: var(--background-light);
+  padding: 15px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1000; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  background-color: var(--background-light); 
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
+  height: 70px;
+  
+}
+nav i{
+font-size: 20px;
+
+}
+.logo{
+   /* Ajusta la altura de la navbar */
+    display: flex;
+    align-items: center; /* Centra el logo verticalmente dentro de la navbar */
+    justify-content: center;
+  
+}
+.logo img {
+  width: 120px; /* Ajusta este valor al tamaño deseado en tu navbar */
+    height: auto; /* IMPORTANTE: Mantiene la proporción del logo */
+    display: block; /* Elimina cualquier espacio extra que puedan añadir los elementos inline */
+}
+
+.menu {
+  height: 30px;             
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  
+}
+.menu a{
+  color: #000000;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform-origin: center left;
+  transition: width 0.2s ease-in;
+  text-decoration: none;
+  color: inherit;
+right: 20px;
+}
+
+.link::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
+  transform-origin: center right;
+  
+}
+
+.link:hover,
+.link:focus {
+  outline: 0;
+  width: 130px;
+}
+
+.link:hover::before,
+.link:focus::before,
+.link:hover .link-title,
+.link:focus .link-title {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.link-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  left: 20px;
+  position: absolute;
+}
+
+.link-title {
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
+  transform-origin: center right;
+  display: block;
+  text-align: center;
+  text-indent: 28px;
+  width: 100%;
+  opacity: 0;
+}
+
+
+/* Botones */
+.button-outline {
+background-color: transparent;
+color: var(--accent-color);
+padding: 12px 25px;
+border: 1px solid var(--background-light);
+border-radius: var(--border-radius);
+cursor: pointer;
+font-size: 1em;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.button-outline:hover {
+background-color: var(--primary-color);
+color: var(--accent-color);
+transform: translateY(-2px);
+box-shadow: var(--box-shadow);
+}
+
+.button-solid {
+background-color: var(--secondary-color);
+color: var(--background-light);
+padding: 12px 25px;
+border: 1px solid #0000004d;
+border-radius: var(--border-radius);
+cursor: pointer;
+font-size: 1em;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.button-solid:hover {
+    background-color: var(--background-light);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+  
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 85vh; /* Altura de pantalla para un impacto visual */
+background-color: var(--background-light); /* Fondo por si la imagen tarda en cargar */
+overflow: hidden;
+padding: 0; /* Asegurarse que no haya padding global */
+}
+
+.hero-image-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1; /* Detrás del contenido */
+}
+
+.hero-image-container img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Cubre todo el espacio manteniendo la proporción */
+filter: brightness(0.5); /* Un poco más oscuro para el texto */
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+color: var(--background-light); /* Texto claro sobre la imagen */
+text-align: left;
+max-width: 1000px;
+padding: 50px; 
+background: rgba(150, 150, 150, 0.2); /* Sutil superposición para legibilidad */
+border-radius: var(--border-radius);
+backdrop-filter: blur(5px); /* Efecto de desenfoque */
+animation: fadeInSlideRight 1s ease-out forwards; /* ANIMACIÓN DE HERO CONTENT */
+}
+
+.hero-content h2 {
+color: var(--background-light);
+font-size: 4em;
+margin-bottom: 10px;
+line-height: 1.1;
+text-align: center;
+}
+
+.hero-content p {
+font-size: 1.3em;
+color: var(--accent-color);
+margin-bottom: 30px;
+}
+
+/* Hero Booking Card */
+.hero-booking-card {
+position: absolute;
+bottom: 20px; /* Ajusta la posición vertical */
+right: 5%; /* Ajusta la posición horizontal */
+background-color: var(--primary-color);
+color: var(--background-light);
+padding: 30px 40px;
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow);
+z-index: 3; /* Encima de la imagen y el contenido principal del hero */
+text-align: left; /* Mantenemos left para el subtítulo y el h3 */
+max-width: 400px;
+animation: fadeInSlideLeft 1s ease-out forwards; /* ANIMACIÓN DE HERO BOOKING CARD */
+animation-delay: 0.5s; /* Retraso para que aparezca después del contenido principal */
+opacity: 0; /* Inicialmente oculto para la animación */
+}
+
+/* Contenedor del botón dentro de hero-booking-card para centrar solo el botón */
+.hero-booking-card .button-wrapper {
+    display: flex;         /* Hacemos este div un contenedor flex */
+    justify-content: center; /* Centramos el único ítem (el botón) dentro de él */
+    margin-top: 20px;      /* Espacio superior para separar el botón del texto anterior */
+}
+
+
+.hero-booking-card .card-subtitle {
+color: rgba(255, 255, 255, 0.952);
+}
+
+.hero-booking-card h3 {
+color: var(--background-light);
+font-size: 1.8em;
+margin-top: 5px;
+margin-bottom: 10px;
+}
+
+/* Secciones de Contenido */
+.content-section {
+padding: 80px 40px;
+max-width: 1400px;
+margin: 40px auto;
+background-color: var(--background-light);
+border-radius: var(--border-radius);
+position: relative; /* Para elementos decorativos */
+box-shadow: 1px 4px 10px  rgba(0, 0, 0, 0.1);
+}
+
+.clean-bg {
+background-color: var(--background-light);
+box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.dual-column-section {
+display: flex;
+justify-content: space-between;
+gap: 60px;
+align-items: flex-start;
+padding: 80px 80px; /* Más padding para separar contenido */
+    max-width: 1400px;
+    margin: 40px auto; /* Centrar la sección */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dual-column-section .left-column {
+flex: 1;
+max-width: 500px;
+position: relative;
+
+}
+
+.dual-column-section .left-column h3 {
+font-size: 2.8em;
+line-height: 1.2;
+}
+
+.dual-column-section .left-column p {
+font-size: 1.1em;
+color: var(--secondary-color);
+}
+
+.dual-column-section .right-column {
+flex: 1;
+display: grid;
+grid-template-columns: 1fr;
+gap: 40px;
+max-width: 600px;
+}
+
+
+
+/* Secciones de Imagen y Texto Alternadas */
+.main-container {
+    max-width: 1500px; /* Adjust based on image, wider than previous */
+    margin: 0 auto; /* Center the main content */
+    padding: 0 20px;
+    box-shadow: var(--box-shadow); /* Some side padding for the container */
+}
+
+/* Services Header Section */
+.services-header {
+    text-align: center;
+    /* padding: 80px 40px 60px; Top, sides, bottom padding */
+    color: var(--text-color);
+    max-width: 1500px;
+}
+
+.services-header h1 {
+    font-weight: 700; 
+    color: var(--text-color); 
+}
+
+.services-header p {
+    max-width: 800px;
+    margin: 0 auto 35px; /* Center paragraphs and add bottom margin */
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Alternating Content Sections */
+.alternating-section {
+    max-width: 1400px; /* Wider container */
+    margin: 40px auto;
+    background: transparent;
+    padding: 40px; /* Generous padding */
+    border-radius: 8px;
+     box-shadow: var(--box-shadow);
+    display: flex; /* Make this a flex container */
+    align-items: flex-start; /* Align items to the top (image and text will start at the same line) */
+    gap: 3px; 
+}
+
+/* For even-numbered sections, reverse the order (text on left, image on right) */
+
+
+.section-image {
+    
+    padding: 25px; /* Padding inside the white card */
+    border-radius: 30px;
+    max-width: 450px;
+    width: 100%; /* Ensure responsiveness */
+    box-sizing: border-box;
+    left: 0px;
+}
+
+.section-image img {
+     width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+.left-content {
+    flex: 0 0 auto; 
+}
+
+
+
+
+.section-content {
+   Flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.section-content h3 {
+  margin-right: 100px;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+
+
+.section-content p {
+    padding-inline: 15% 15%;
+    text-align: left; 
+      margin-top: 0;
+      padding-right: 15%;
+}
+
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .car-rental-section {
+        flex-direction: column; /* Stack columns on smaller screens */
+        align-items: center; /* Center stacked items */
+        gap: 30px;
+        padding: 30px;
+    }
+    .left-content,
+    .right-content {
+        flex: unset; /* Reset flex properties */
+        width: 100%; /* Take full width when stacked */
+        max-width: 700px; /* Limit width of stacked items */
+        text-align: center; /* Center text when stacked */
+    }
+    .right-content h2 {
+        font-size: 2.2em;
+    }
+    .right-content h3 {
+        font-size: 1.3em;
+    }
+    .right-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .car-rental-section {
+        padding: 20px;
+    }
+    .image-card {
+        padding: 15px;
+    }
+    .right-content h2 {
+        font-size: 1.8em;
+    }
+    .right-content h3 {
+        font-size: 1.1em;
+    }
+}
+
+footer {
+background-color: var(--primary-color);
+color: var(--background-light);
+text-align: center;
+padding: 30px 0;
+margin-top: 80px;
+font-size: 0.9em;
+}
+
+/* Animaciones */
+
+/* Fade In para secciones */
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* Slide In Right para el contenido del hero */
+@keyframes fadeInSlideRight {
+from {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+/* Slide In Left para la tarjeta de booking del hero */
+@keyframes fadeInSlideLeft {
+from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+
+/* Animación para elementos que aparecen al hacer scroll (JavaScript) */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}

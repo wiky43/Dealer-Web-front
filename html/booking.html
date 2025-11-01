@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADRNAZ Rent Car</title>
+  <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+  <link rel="stylesheet" href="/css/booking.css" />
+  
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+</head>
+ <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="source/Logos/ADRZ_logo_converted-Photoroom.png"
+            alt="ADRNZ Logo"
+          />
+        </div>
+        <div class="menu">
+          <a href="/html/index.html#inicio" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-home-alt-2"></i>
+            </span>
+            <span class="link-title">Inicio</span>
+          </a>
+          <a href="/html/index.html#catalogo" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-car"></i>
+            </span>
+            <span class="link-title">Catálogo</span>
+          </a>
+          <a href="/html/Servicios.html" class="link">
+            <span class="link-icon">
+              <i class='bx bxs-wrench'></i>
+            </span>
+            <span class="link-title">Servicios</span>
+          </a>
+          
+          <a href="/html/Login-form.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-user"></i>
+            </span>
+            <span class="link-title">Cuenta</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+<body>
+  <div class="booking-container">
+   <form class="booking-form" id="bookingForm">
+  <h2>Reserva tu Auto</h2>
+
+  <input type="text" placeholder="Nombre completo" required />
+  <input type="email" placeholder="Correo electrónico" required />
+  <input type="text" name="cedula" pattern="\d{3}-\d{7}-\d{1}" placeholder="Cedula Ej: 001-1234567-8" required />
+  <input type="text" id="adress" name="adress" placeholder="Dirección" required />
+
+  <!-- Aquí se mostrará el auto seleccionado -->
+  <input type="text" class="selected-car" placeholder="Auto seleccionado" readonly required />
+
+  <label for="checkin">Fecha y hora de Inicio</label>
+  <input type="datetime-local" id="checkin" name="checkin" required />
+
+  <label for="checkout">Fecha y hora de salida</label>
+  <input type="datetime-local" id="checkout" name="checkout" required />
+
+  <p>Total estimado: <strong id="totalPrecio">$0.00</strong></p>
+
+  <button type="submit">Reservar</button>
+  <a href="/html/index.html#catalogo" id="CambiarCAr" class="button-solid">Cambiar auto</a>
+</form>
+
+    <aside class="car-summary" id="carSummary">
+      <!-- Aquí irá el auto seleccionado -->
+    </aside>
+  </div>
+<footer>
+      <p>&copy; 2025 ADRNAZ Rent Car. All rights reserved.</p>
+    </footer>
+  <script src="/js/booking.js"></script>
+</body>
+</html>

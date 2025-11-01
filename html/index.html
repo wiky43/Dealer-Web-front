@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADRNAZ Rent Car</title>
+    <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="/source/Logos/ADRZ_logo_converted-Photoroom.png"
+            alt="ADRNZ Logo"
+          />
+        </div>
+        <div class="menu">
+          <a href="/html/index.html#inicio" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-home-alt-2"></i>
+            </span>
+            <span class="link-title">Inicio</span>
+          </a>
+          <a href="/html/index.html#catalogo" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-car"></i>
+            </span>
+            <span class="link-title">Catálogo</span>
+          </a>
+          <a href="/html/Servicios.html" class="link">
+            <span class="link-icon">
+              <i class='bx bxs-wrench'></i>
+            </span>
+            <span class="link-title">Servicios</span>
+          </a>
+          
+          <a href="/html/Login-form.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-user"></i>
+            </span>
+            <span class="link-title">Cuenta</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero-section">
+        <div class="hero-image-container">
+          <img
+            src="/source/Cars/BMW-M4-BMWM4-F82-M4F82-ODDENCARS-STROKERPHOTO-2.jpg"
+            alt="cars"
+          />
+        </div>
+        <div class="hero-content">
+          <h2>¡Tu viaje comienza aquí!</h2>
+          <p>
+            Alquila el auto ideal con nosotros. Comodidad, seguridad y precios
+            accesibles para que vivas una experiencia sin complicaciones.
+          </p>
+          <div class="button-wrapper">
+            <a href="#aboutme" class="button-solid">Ver Más</a>
+          </div>
+        </div>
+        <div class="hero-booking-card">
+          <span class="card-subtitle">Reservar</span>
+          <h3>Una Experiencia Exclusiva</h3>
+          <div class="button-wrapper">
+            <a href="#catalogo" class="button-solid">Ver autos disponibles</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="content-section clean-bg reveal">
+        <h2 class="text-center">Nuestro Catálogo de vehículos</h2>
+        <p class="text-center description">
+          Contamos con una amplia variedad de vehículos para cada necesidad:
+          desde autos compactos para la ciudad hasta SUV y camionetas para
+          viajes en grupo o aventuras. Todos nuestros autos están en excelentes
+          condiciones y listos para rodar.
+        </p>
+        <div class="text-center">
+          <button class="button-outline" data-target="autos-catalogo-grid">
+            Mostrar Autos
+          </button>
+        </div>
+
+        <div id="autos-catalogo-grid" class="products-grid hidden-on-load">
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/Audi S7.jpg"
+                  alt="Audi S7 Sportback  - Vista exterior"
+                />
+                <h3>Audi S7 Sportback</h3>
+                <p>Potencia y Estilo en Cada Curva</p>
+
+                <div class="button-card">
+                  <div class="price"><p>$200,00/día</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/Audi S7 Sportback-interior.jpg"
+                  alt="Audi S7 Sportback - Vista interior"
+                />
+                <p>
+                  -Motor V6 TDI con 344 CV y ¡700 Nm de par!
+                  <br />
+                  -Aceleración 0-100 km/h en 5.1 segundos. <br />-Diseño
+                  Sportback elegante y deportivo. <br />
+                  -Interior con doble pantalla táctil y Audi Virtual Cockpit.
+                  <br />-Tecnología Mild-Hybrid (MHEV).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BMW M4 Competition -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/m4.jpg"
+                  alt="BMW M4 Competition - Vista exterior"
+                />
+                <h3>BMW M4 Competition</h3>
+                <p>Deportivo y Exclusivo</p>
+                <div class="button-card">
+                  <div class="price"><p>$350,00/día</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/m4interior.jpg"
+                  alt="BMW M4 Competition - Vista interior"
+                />
+                <p>
+                  -Motor de seis cilindros en línea con doble turbo y ¡510
+                  CV!<br />
+                  -¡650 Nm de par motor para una aceleración explosiva!<br />
+                  -Aceleración de 0 a 100 km/h en tan solo 3.9 segundos.<br />
+                  -Diseño exterior agresivo con la distintiva parrilla vertical
+                  sin marco y elementos aerodinámicos M.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Mercedes C63 AMG Coupé -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/mecedes coupe.jpg"
+                  alt="Mercedes C63 AMG Coupé - Vista exterior"
+                />
+                <h3>Mercedes C63 AMG Coupé</h3>
+                <p>La Adrenalina te Espera</p>
+                <div class="button-card">
+                  <div class="price"><p>$230,00/día</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <img
+                  src="/source/Cars/mercedes coupe interior.jpg"
+                  alt="Mercedes C63 AMG Coupé - Vista interior"
+                />
+                <div class="card-content">
+                  <p>
+                    -Motor V8 Biturbo de 4.0 litros con ¡hasta 510 CV!
+                    <br />-¡700 Nm de par motor para una entrega de potencia
+                    instantánea! <br />-Aceleración de 0 a 100 km/h en solo 3.9
+                    segundos. <br />-Sonido del V8 AMG inconfundible y
+                    emocionante. <br />-Interior deportivo y lujoso con asientos
+                    AMG Performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Porsche Macan GTS  -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/macan exterior.jpg"
+                  alt="Porsche Macan GTS 2022 - Vista exterior"
+                />
+                <h3>Porsche Macan GTS</h3>
+                <p>Experiencia Porsche Inigualable</p>
+                <div class="button-card">
+                  <div class="price"><p>$100,00/día</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/macan interior.jpg"
+                  alt="Porsche Macan GTS 2022 - Vista interior"
+                />
+                <p>
+                  -Motor V6 biturbo de 440 CV y 550 Nm de par.
+                  <br />-Aceleración de 0 a 100 km/h en solo 4.3 segundos con
+                  Sport Chrono Package. <br />-Diseño exterior con distintivos
+                  elementos GTS en negro y llantas deportivas. <br />-Interior
+                  deportivo y lujoso con asientos GTS y acabados Race-Tex.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Porsche Cayenne Coupé Turbo GT -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/cayena exterior2.jpg"
+                  alt="Porsche Cayenne Coupé Turbo GT - Vista exterior"
+                />
+                <h3>Porsche Cayenne Turbo GT</h3>
+                <p>SUV de Lujo y Rendimiento</p>
+                <div class="button-card">
+                  <div class="price"><p>$190,00/día</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/cayena interior.jpg"
+                  alt="Porsche Cayenne Coupé Turbo GT - Vista interior"
+                />
+                <p>
+                  -Motor V8 biturbo de 640 CV y 850 Nm de par.
+                  <br />-¡Aceleración de 0 a 100 km/h en solo 3.3 segundos!
+                  <br />-Velocidad máxima de 300 km/h. <br />-Diseño Coupé
+                  agresivo con kit aerodinámico de carbono y escape central.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Mercedes-Benz GLB 250 -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/Mercedes-Benz GLB 250.jpg"
+                  alt="Mercedes-Benz GLB 250 - Vista exterior"
+                />
+                <h3>Mercedes-Benz GLB 250</h3>
+                <p>Dominando el Asfalto</p>
+                <div class="button-card">
+                  <div class="price"><p>$150,00/díaw</p></div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/Mercedes-Benz GLB 250 interior.jpg"
+                  alt="Mercedes-Benz GLB 250 - Vista interior"
+                />
+                <p>
+                  -Motor 2.0 turbo de 224 CV con 350 Nm de par.
+                  <br />-Capacidad para hasta 7 pasajeros, único en su segmento.
+                  <br />-Diseño SUV robusto y funcional que maximiza el espacio
+                  interior. <br />-Sistema MBUX con doble pantalla y control por
+                  voz "Hey Mercedes".
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="content-section reveal">
+        <h2 class="text-center">Nuestra Flota Sostenible</h2>
+        <p class="text-center description">
+          Vehículos eléctricos e híbridos que combinan lujo y sostenibilidad.
+        </p>
+
+        <div class="text-center">
+          <button class="button-outline" data-target="autos-sostenibles-grid">
+            Mostrar Autos
+          </button>
+        </div>
+
+        <div id="autos-sostenibles-grid" class="products-grid hidden-on-load">
+          <!-- Tesla Model S Plaid-->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/Tesla Model S Plaid exterior.jpg"
+                  alt="Tesla Model S Plaid - Vista exterior"
+                />
+                <h3>Tesla Model S Plaid</h3>
+                <p>Versión de ultra-alto rendimiento</p>
+                <div class="button-card">
+                  <div class="price">$270,00/día</div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/Tesla Model S Plaid interior.jpg"
+                  alt="Tesla Model S Plaid- Vista interior"
+                />
+                <p>-Potencia: ¡1,020 CV (760 kW)! Una de las potencias más elevadas en un coche de producción.</br>-Par Motor: Más de 1.000 Nm Par instantáneo que pega al asiento desde el primer momento.</br>Aceleración (0-100 km/h): ¡2.1 segundos! Lo convierte en el coche de producción con la aceleración más rápida del mundo.</br>Velocidad Máxima: Hasta 322 km/h (200 mph).</br>-Autonomía Estimada: Alrededor de 560 km.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/1-2025-tesla-cybertruck-front-view.jpg"
+                  alt="Tesla cybertruck - Vista exterior"
+                />
+                <h3>Tesla cybertruck</h3>
+                <p>
+                  Pick up revolucionaria y desafiante.
+                </p>
+                <div class="button-card">
+                  <div class="price">$250,00/día</div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/cybertruck_tactical_grey.jpg"
+                  alt="Tesla cybertruck- Vista interior"
+                />
+                <p>
+                  -Potencia Cyberbeast: ¡Hasta 845 CV (630 kW)! Una cifra que
+                  rivaliza con los superdeportivos.</br>
+                  -Par Motor Cyberbeast: ¡Más de 1.000 Nm! Un par motor
+                    instantáneo y masivo.</br>
+                    -Aceleración (0-100 km/h) Cyberbeast: ¡2.7 segundos.
+                  <br>-Autonomía Estimada: Varía según la versión, con
+                    estimaciones de hasta 547 km.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tesla Model X -->
+          <div class="card reveal">
+            <div class="card-inner">
+              <div class="card-front">
+                <img
+                  src="/source/Cars/Tesla Model x exterior.jpg"
+                  alt="Tesla Model X - Vista exterior"
+                />
+                <h3>Tesla Model X</h3>
+                <p>Mezcla de elegancia con deportividad</p>
+                <div class="button-card">
+                  <div class="price">$220,00/día</div>
+                  <button class="button-solid">Reservar</button>
+                </div>
+              </div>
+              <div class="card-back">
+                <img
+                  src="/source/Cars/Tesla Model x interior.jpg"
+                  alt="Tesla Model X- Vista interior"
+                />
+                <p>-Potencia: ¡Hasta 1,020 CV! Lo convierte en uno de los SUVs de producción más potentes del mundo.</br>-Par Motor: Más de 1,000 Nm, ofreciendo una aceleración instantánea y una capacidad de remolque excepcional.</br>Aceleración: (0-100 km/h)  ¡2.5 segundos!</br>Autonomía Estimada: hasta de 534 km (333 millas) </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutme" class="dual-column-section reveal">
+        <div class="left-column">
+          <span class="subtitle">Nuestros Valores</span>
+          <h3>Por qué Elegir ADRNZ</h3>
+          <p>
+            Nos dedicamos a ofrecer una experiencia de alquiler de vehículos
+            inigualable, combinando lujo, conveniencia y un compromiso con la
+            sostenibilidad.
+          </p>
+          <a href="/html/Servicios.html" class="button-outline">Conoce Más</a>
+        </div>
+        <div class="right-column">
+          <a href="/html/Servicios.html" class="detail-card">
+            <h4>Servicio Personalizado</h4>
+            <p>
+              Atención al cliente 24/7 para satisfacer todas tus necesidades de
+              viaje.
+            </p>
+          </a>
+          <a href="#catalogo" class="detail-card">
+            <h4>Flota Premium</h4>
+            <p>
+              Vehículos de última generación para garantizar confort y
+              seguridad.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <section class="ven-dee-brank-section reveal">
+        <div class="section-image">
+          <img
+            src="/source/Cars/audiinterior.jpg"
+            alt="Interior de coche de lujo"
+          />
+        </div>
+        <div class="section-content">
+          <span class="subtitle">Comodidad</span>
+          <h3>Diseño Interior de Lujo</h3>
+          <p>
+            Cada vehículo de nuestra flota ha sido seleccionado pensando en su
+            máximo confort y elegancia. Disfrute de interiores espaciosos,
+            acabados premium y tecnología intuitiva.
+          </p>
+          
+        </div>
+      </section>
+
+      <section class="bigh-sinest-section reveal">
+        <div class="section-image">
+          <img
+            src="/source/Cars/taycan-cargando.jpg"
+            alt="Coche eléctrico cargando"
+          />
+        </div>
+        <div class="section-content">
+          <span class="subtitle">Sostenibilidad</span>
+          <h3>Comprometidos con el Planeta</h3>
+          <p>
+            En ADRNAZ, nuestra pasión por los vehículos de alta gama va de la
+            mano con nuestro compromiso con el medio ambiente. Ofrecemos una
+            creciente selección de coches eléctricos e híbridos.
+          </p>
+          <a href="/html/index.html#catalogo" class="button-outline">Nuestros Electricos</a>
+          
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ADRNAZ Rent Car. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>

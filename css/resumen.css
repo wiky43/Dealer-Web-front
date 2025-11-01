@@ -1,0 +1,289 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+--primary-color: #233833; /* Verde oscuro / Negro suave para texto principal y fondos */
+--secondary-color: #2e4943; /* Verde más sutil para acentos */
+--accent-color: #f8f0e1; /* Tono tierra/marrón para detalles */
+--background-light: #f8f0e1;
+--text-color: #000000;
+--heading-color: #343A40;
+--border-color: #233833; /* Un beige suave para bordes */
+--box-shadow: 0 2px 5px rgba(0, 0, 0, 0.342); /* Sombra muy sutil */
+--border-radius: 4px;
+}
+
+/* Estilos Generales */
+body {
+font-family: 'Poppins', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: var(--background-light);
+color: var(--text-color);
+line-height: 1.6;
+overflow-x: hidden; /* Evita scroll horizontal por elementos fuera de flujo */
+}
+
+
+
+
+/* Header y Navegación */
+header {
+  background-color: var(--background-light);
+  padding: 15px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  background-color: var(--background-light);
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
+  height: 70px;
+
+}
+nav i{
+font-size: 20px;
+
+}
+.logo{
+   /* Ajusta la altura de la navbar */
+    display: flex;
+    align-items: center; /* Centra el logo verticalmente dentro de la navbar */
+    justify-content: center;
+
+}
+.logo img {
+  width: 120px; /* Ajusta este valor al tamaño deseado en tu navbar */
+    height: auto; /* IMPORTANTE: Mantiene la proporción del logo */
+    display: block; /* Elimina cualquier espacio extra que puedan añadir los elementos inline */
+}
+
+.menu {
+  height: 30px;
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+
+}
+.menu a{
+  color: #000000;
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform-origin: center left;
+  transition: width 0.2s ease-in;
+  text-decoration: none;
+  color: inherit;
+right: 20px;
+}
+
+.link::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
+  transform-origin: center right;
+
+}
+
+.link:hover,
+.link:focus {
+  outline: 0;
+  width: 130px;
+}
+
+.link:hover::before,
+.link:focus::before,
+.link:hover .link-title,
+.link:focus .link-title {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.link-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  left: 20px;
+  position: absolute;
+}
+
+.link-title {
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
+  transform-origin: center right;
+  display: block;
+  text-align: center;
+  text-indent: 28px;
+  width: 100%;
+  opacity: 0;
+}
+
+.resumenReserva {
+  display: flex;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  align-items: flex-start; /* para que se alineen arriba */
+  justify-content: center;
+}
+.booking-form {
+  margin-top: 60px;
+  background: var(--primary-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow:var(--box-shadow);
+}
+.booking-form p {
+  color: var(--background-light);
+  text-align: left;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.booking-form h2 {
+  margin-bottom: 0px;
+  margin-top: 0;
+  color: var(--background-light);
+  text-align: center;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.booking-form input::placeholder{
+  color: var(--text-color);
+}
+
+.booking-form input {
+  border-radius: 6px;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="datetime-local"] {
+  background: var(--accent-color);
+  color: var(--text-color);
+  outline: none;
+  transition: background 0.3s;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="datetime-local"] {
+  background: #ffffff;
+}
+
+.booking-form .selected-car {
+
+  color: #ffffff;
+  font-weight: 600;
+  user-select: none;
+}
+
+.booking-form label {
+  color: var(--background-light);
+  font-weight: 500;
+  margin-top: 5px;
+}
+.resumen-buttons{
+  display: flex;
+  justify-content: center;     /* Centra horizontalmente */
+  align-items: center;         /* Centra verticalmente si cambia el alto */
+  gap: 10px;                   /* Espacio entre los botones */
+}
+
+.resumen-buttons button{
+   flex: 1;
+   max-width: 200px;
+  background: var(--background-light);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.4s;
+  margin-top: 0;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.resumen-buttons button:hover {
+  background: var(--secondary-color);
+  color: var(--accent-color);
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+#miniForm {
+  position: absolute;
+  background-color: var(--background-light);
+  box-shadow:var(--box-shadow);
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 1000;
+  width: 320px;
+  display: none; /* Lo manejas desde JS */
+}
+
+#detallesAuto img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+#detallesAuto p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin: 0;
+  text-align: center;
+
+}
+/* Footer */
+footer {
+background-color: var(--primary-color);
+color: var(--background-light);
+text-align: center;
+padding: 30px 0;
+margin-top: 80px;
+font-size: 0.9em;
+}

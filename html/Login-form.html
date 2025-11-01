@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Signup Form</title>
+    <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/Login-style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="/source/Logos/ADRZ_logo_converted-Photoroom.png"
+            alt="ADRNZ Logo"
+          />
+        </div>
+        <div class="menu">
+          <a href="/html/index.html#inicio" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-home-alt-2"></i>
+            </span>
+            <span class="link-title">Inicio</span>
+          </a>
+          <a href="/html/index.html#catalogo" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-car"></i>
+            </span>
+            <span class="link-title">Catálogo</span>
+          </a>
+          <a href="/html/Servicios.html" class="link">
+            <span class="link-icon">
+              <i class='bx bxs-wrench'></i>
+            </span>
+            <span class="link-title">Servicios</span>
+          </a>
+          
+          <a href="/html/Login-form.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-user"></i>
+            </span>
+            <span class="link-title">Cuenta</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="Login">
+      <div class="back">
+        <img src="/source/Cars/porsha-back.jpg" alt="background" />
+      </div>
+      <div class="container">
+        <div class="form-box login">
+          <form id="loginForm" action="#">
+            <h1>Login</h1>
+            <div class="input-box">
+              <input
+                type="text"
+                id="loginUsername"
+                placeholder="Username"
+                required
+              />
+              <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+              />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="forgot-link">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <form id="registerForm" action="#">
+            <h1>Registration</h1>
+            <div class="input-box">
+              <input
+                type="text"
+                id="registerUsername"
+                placeholder="Username"
+                required
+              />
+              <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email"
+                required
+              />
+              <i class="bx bxs-envelope"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+                required
+              />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <button type="submit" class="btn">Register</button>
+          </form>
+        </div>
+
+        <div class="toggle-box">
+          <div class="toggle-panel toggle-left">
+            <h1>Hello, Welcome!</h1>
+            <p>Don't have an account?</p>
+            <button class="btn register-btn">Register</button>
+          </div>
+
+          <div class="toggle-panel toggle-right">
+            <h1>Welcome Back!</h1>
+            <p>Already have an account?</p>
+            <button class="btn login-btn">Login</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  const registerBtn = document.querySelector('.register-btn');
+  const loginBtn = document.querySelector('.login-btn');
+
+  registerBtn.addEventListener('click', () => {
+    container.classList.add('active');
+  });
+
+  loginBtn.addEventListener('click', () => {
+    container.classList.remove('active');
+  });
+
+  // LOGIN
+  document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert('Login correcto');
+    } else {
+      alert(result.message || 'Error al iniciar sesión');
+    }
+  });
+
+  // REGISTRO
+  document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const username = document.getElementById('registerUsername').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    const response = await fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email, password })
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert('Registro exitoso. Ahora puedes iniciar sesión.');
+      container.classList.remove('active'); // Regresa al login automáticamente
+    } else {
+      alert(result.message || 'Error al registrarte');
+    }
+  });
+});
+</script>
+
+  </body>
+</html>

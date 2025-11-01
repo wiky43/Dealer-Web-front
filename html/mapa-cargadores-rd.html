@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cargadores Eléctricos en RD - OpenChargeMap</title>
+  <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <style>
+    #map { height: 100vh; margin: 0; }
+    body { margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([18.4861, -69.9312], 10); // Santo Domingo // RD
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const apiKey = "f3d0436c-8116-4c14-bdaf-a53e491c5ad7"; // Tu API Key
+
+    fetch(`https://api.openchargemap.io/v3/poi/?output=json&countrycode=DO&maxresults=100&compact=true&verbose=false&key=${apiKey}`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data.length) {
+          alert("No se encontraron estaciones.");
+        }
+
+        data.forEach(estacion => {
+          const info = estacion.AddressInfo;
+          const nombre = info.Title || "Estación";
+          const lat = info.Latitude;
+          const lon = info.Longitude;
+
+          L.marker([lat, lon])
+            .addTo(map)
+            .bindPopup(`<strong>${nombre}</strong><br>${info.AddressLine1 || ''}`);
+        });
+      })
+      .catch(error => {
+        console.error("Error al obtener datos de OpenChargeMap:", error);
+        alert("No se pudieron cargar los cargadores.");
+      });
+  </script>
+</body>
+</html>

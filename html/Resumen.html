@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADRNAZ Rent Car</title>
+    <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/resumen.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="/source/Logos/ADRZ_logo_converted-Photoroom.png"
+            alt="ADRNZ Logo"
+          />
+        </div>
+        <div class="menu">
+          <a href="/html/index.html#inicio" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-home-alt-2"></i>
+            </span>
+            <span class="link-title">Inicio</span>
+          </a>
+          <a href="/html/index.html#catalogo" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-car"></i>
+            </span>
+            <span class="link-title">Catálogo</span>
+          </a>
+          <a href="/html/Servicios.html" class="link">
+            <span class="link-icon">
+              <i class='bx bxs-wrench'></i>
+            </span>
+            <span class="link-title">Servicios</span>
+          </a>
+          
+          <a href="/html/Login-form.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-user"></i>
+            </span>
+            <span class="link-title">Cuenta</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="resumenReserva">
+        <form class="booking-form" id="bookingForm">
+          <h2>Confirma tu Reserva</h2>
+          <p>Numero de orden: <strong id="numeroOrden"></strong></p>
+
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre completo"
+            readonly
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            readonly
+            required
+          />
+          <input
+            type="text"
+            id="cedula"
+            name="cedula"
+            pattern="\d{3}-\d{7}-\d{1}"
+            placeholder="Cédula Ej: 001-1234567-8"
+            readonly
+            required
+          />
+
+          <input
+            type="text"
+            id="adress"
+            name="adress"
+            placeholder="Dirección"
+            readonly
+          />
+
+          <!-- Aquí se mostrará el auto seleccionado -->
+          <input
+            type="text"
+            id="auto"
+            class="selected-car"
+            placeholder="Auto seleccionado"
+            readonly
+            required
+          />
+
+          <label for="checkin">Fecha y hora de Inicio</label>
+          <input
+            type="datetime-local"
+            id="checkin"
+            name="checkin"
+            min="2000-01-02"
+            readonly
+            required
+          />
+
+          <label for="checkout">Fecha y hora de salida</label>
+          <input
+            type="datetime-local"
+            id="checkout"
+            name="checkout"
+            readonly
+            required
+          />
+
+          <p>Total estimado: <strong id="totalPrecio">$0.00</strong></p>
+
+          <div class="resumen-buttons">
+            <button id="modificarBtn" class="button-solid" type="button">
+              Modificar Reserva
+            </button>
+            <button id="pagarBtn" class="button-solid" type="button">
+              Pagar
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        id="miniForm"
+      >
+        <div id="detallesAuto"></div>
+      </div>
+    </main>
+    <script src="/js/resumen.js"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+       
+    <meta charset="UTF-8" />
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       
+    <title>ADRNAZ Rent Car</title>
+       
+    <link
+      rel="shortcut icon"
+      href="/source/Logos/ADRZ_logo_converted.jpg"
+      type="image/x-icon"
+    />
+       
+    <link rel="stylesheet" href="/css/pago.css" />
+         
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+       
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="/source/Logos/ADRZ_logo_converted-Photoroom.png"
+            alt="ADRNZ Logo"
+          />
+        </div>
+        <div class="menu">
+          <a href="/html/index.html#inicio" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-home-alt-2"></i>
+            </span>
+            <span class="link-title">Inicio</span>
+          </a>
+          <a href="/html/index.html#catalogo" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-car"></i>
+            </span>
+            <span class="link-title">Catálogo</span>
+          </a>
+          <a href="/html/Servicios.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-wrench"></i>
+            </span>
+            <span class="link-title">Servicios</span>
+          </a>
+
+          <a href="/html/Login-form.html" class="link">
+            <span class="link-icon">
+              <i class="bx bxs-user"></i>
+            </span>
+            <span class="link-title">Cuenta</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="modal-wrapper">
+        <div class="card-image">
+          <div class="card-front">
+            <img
+              class="card-background"
+              src="https://raw.githubusercontent.com/MoosaSaadat/card-checkout/master/card.png"
+              alt="Credit Card"
+            />
+            <div class="card-logo">
+              <div class="logo-circle left"></div>
+              <div class="logo-circle right"></div>
+            </div>
+            <span class="card-number">XXXX XXXX XXXX XXXX</span>
+            <div class="card-info left">
+              <span class="card-holder-name">NOMBRE DE LA TARJETA</span>
+            </div>
+            <div class="card-info right">
+              <span class="valid-thru-title">VALIDO HASTA</span>
+              <span class="valid-thru-date">MM/YY</span>
+            </div>
+          </div>
+          <div class="card-rear">
+            <img
+              class="card-background"
+              src="https://raw.githubusercontent.com/MoosaSaadat/card-checkout/master/card.png"
+              alt="Credit Card"
+            />
+            <div class="card-logo">
+              <div class="logo-circle left"></div>
+              <div class="logo-circle right"></div>
+            </div>
+            <div class="black-bar"></div>
+            <div class="card-info">
+              <span class="white-bar"></span>
+              <span class="security-code">123</span>
+            </div>
+          </div>
+          <span class="active-border"></span>
+        </div>
+        <div class="card-form">
+          <div class="form-wrapper">
+            <form action="#">
+              <div class="form-input">
+                <i class="far fa-credit-card"></i>
+                <input
+                  type="text"
+                  name="card-number"
+                  id="number"
+                  placeholder="Numero de la tarjeta"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  name="card-holder-name"
+                  id="name"
+                  placeholder="Nombre de la tarjeta"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <i class="fas fa-calendar-day"></i>
+                <input
+                  type="text"
+                  name="valid-thru-date"
+                  id="expiry"
+                  placeholder="Fecha de expiracion"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="number"
+                  name="security-code"
+                  id="code"
+                  placeholder="Codigo de seguridad"
+                  required
+                />
+              </div>
+              <div class="form-input btn">
+                <i class="fas fa-check"></i>
+                <button type="submit">Pagar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 ADRNAZ Rent Car. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/pago.js"></script>
+  </body>
+</html>
